@@ -1,22 +1,47 @@
-function myFunction() {
-    var str = "Is this all there is?";
-    var patt1 = /[ha]/g;
-    var result = str.match(patt1);
-    console.log(result);
-}
+const btn = document.querySelector("body > button");
 
-const elements = ['Fire', 'Air', 'Water'];
+const array = [];
 
-console.log(elements.join());
-// expected output: "Fire,Air,Water"
+let count = 0;
 
-console.log(elements.join('--'));
-// expected output: "FireAirWater"
+btn.addEventListener('click', function () {
+    array.push(count);
+    count++;
+    if (array.length > 4) {
+        array.shift();
+    }
+    console.log(array);
+});
 
-console.log(elements.join('-'));
-// expected output: "Fire-Air-Water"
+const array1 = [5, 8, 99, 120, 32, 831];
 
-myFunction();
+const found = array1.filter(element => element % 3 === 0);
+
+
+console.log(found);
+// expected output: 12
+
+
+// function myFunction() {
+//     var str = "Is this all there is?";
+//     var patt1 = /[ha]/g;
+//     var result = str.match(patt1);
+//     console.log(result);
+// }
+//
+// const elements = ['Fire', 'Air', 'Water'];
+//
+// console.log(elements.join());
+// // expected output: "Fire,Air,Water"
+//
+// console.log(elements.join('--'));
+// // expected output: "FireAirWater"
+//
+// console.log(elements.join('-'));
+// // expected output: "Fire-Air-Water"
+
+// myFunction();
+
 
 // const numberGenerator = (howManyNumber) => {
 //     // return [...Array(howManyNumber)].map(e=>~~(Math.random()*howManyNumber))
