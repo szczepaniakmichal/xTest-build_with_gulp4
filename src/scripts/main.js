@@ -1,25 +1,47 @@
-const btn = document.querySelector("body > button");
-
-const array = [];
-
-let count = 0;
-
-btn.addEventListener('click', function () {
-    array.push(count);
-    count++;
-    if (array.length > 4) {
-        array.shift();
-    }
-    console.log(array);
+const promise1 = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+        resolve('foo');
+    }, 7000);
 });
 
-const array1 = [5, 8, 99, 120, 32, 831];
 
-const found = array1.filter(element => element % 3 === 0);
+promise1.then(function(value) {
+    console.log(value);
+    // expected output: "foo"
+});
+
+console.log(promise1);
+// expected output: [object Promise]
 
 
-console.log(found);
+
+
+
+
+// const btn = document.querySelector("body > button");
+//
+// const array = [];
+//
+// let count = 0;
+//
+// btn.addEventListener('click', function () {
+//     array.push(count);
+//     count++;
+//     if (array.length > 4) {
+//         array.shift();
+//     }
+//     console.log(array);
+// });
+//
+// const array1 = [5, 8, 99, 120, 32, 831];
+//
+// const found = array1.filter(element => element % 3 === 0);
+//
+//
+// console.log(found);
 // expected output: 12
+
+
 
 
 // function myFunction() {
@@ -41,6 +63,9 @@ console.log(found);
 // // expected output: "Fire-Air-Water"
 
 // myFunction();
+
+
+
 
 
 // const numberGenerator = (howManyNumber) => {
