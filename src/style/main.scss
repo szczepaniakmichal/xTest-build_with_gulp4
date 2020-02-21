@@ -1,0 +1,29 @@
+
+
+.scrollTable {
+  overflow: auto;
+
+  table {
+    thead {
+      tr {
+        th {
+          //position: sticky;
+          //top: 0;
+          //background-color: greenyellow;
+          //z-index: 999;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td:first-child {
+          background-color: yellow;
+          position: sticky;
+          left: 0;
+          z-index: 999;
+        }
+      }
+    }
+  }
+}
