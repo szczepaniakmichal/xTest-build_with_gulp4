@@ -1,11 +1,11 @@
+const container = document.querySelector('.container');
+const btn = document.querySelector("body > button");
 
-
-
-
-
-
-
-
+btn.addEventListener('click', function () {
+    const offSetY100 = (window.pageYOffset) + (window.innerHeight / 2) - (btn.offsetHeight / 2);
+    console.log(offSetY100);
+    container.style.transform = `translate(0, ${offSetY100}px)`;
+});
 
 
 // const promise1 = new Promise(function(resolve, reject) {
@@ -22,10 +22,6 @@
 //
 // console.log(promise1);
 // // expected output: [object Promise]
-
-
-
-
 
 
 // const btn = document.querySelector("body > button");
@@ -52,8 +48,6 @@
 // expected output: 12
 
 
-
-
 // function myFunction() {
 //     var str = "Is this all there is?";
 //     var patt1 = /[ha]/g;
@@ -73,9 +67,6 @@
 // // expected output: "Fire-Air-Water"
 
 // myFunction();
-
-
-
 
 
 // const numberGenerator = (howManyNumber) => {
