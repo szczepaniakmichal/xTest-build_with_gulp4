@@ -7,6 +7,11 @@ btn.addEventListener('click', function () {
     container.style.transform = `translate(0, ${offSetY100}px)`;
 });
 
+window.addEventListener('scroll', function () {
+    const offSetY100 = (window.pageYOffset) + (window.innerHeight / 2) - (btn.offsetHeight / 2);
+    container.style.transform = `translate(0, ${offSetY100}px)`;
+});
+
 
 // const promise1 = new Promise(function(resolve, reject) {
 //     setTimeout(function() {
