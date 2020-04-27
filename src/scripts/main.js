@@ -1,16 +1,16 @@
-const container = document.querySelector('.container');
-const btn = document.querySelector("body > button");
-
-btn.addEventListener('click', function () {
-    const offSetY100 = (window.pageYOffset) + (window.innerHeight / 2) - (btn.offsetHeight / 2);
-    console.log(offSetY100);
-    container.style.transform = `translate(0, ${offSetY100}px)`;
-});
-
-window.addEventListener('scroll', function () {
-    const offSetY100 = (window.pageYOffset) + (window.innerHeight / 2) - (btn.offsetHeight / 2);
-    container.style.transform = `translate(0, ${offSetY100}px)`;
-});
+// const container = document.querySelector('.container');
+// const btn = document.querySelector("body > button");
+//
+// btn.addEventListener('click', function () {
+//     const offSetY100 = (window.pageYOffset) + (window.innerHeight / 2) - (btn.offsetHeight / 2);
+//     console.log(offSetY100);
+//     container.style.transform = `translate(0, ${offSetY100}px)`;
+// });
+//
+// window.addEventListener('scroll', function () {
+//     const offSetY100 = (window.pageYOffset) + (window.innerHeight / 2) - (btn.offsetHeight / 2);
+//     container.style.transform = `translate(0, ${offSetY100}px)`;
+// });
 
 
 // const promise1 = new Promise(function(resolve, reject) {
@@ -113,3 +113,11 @@ window.addEventListener('scroll', function () {
 //
 // const arr4 = numberGenerator(5);
 // console.log(arr4);
+
+const array = ['lody', 'kiełbasa', 'zupa'];
+
+const value = 'zupa';
+
+const result = array.some(el => el === value);
+console.log(result);
+
