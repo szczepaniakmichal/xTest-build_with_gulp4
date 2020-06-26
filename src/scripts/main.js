@@ -1,16 +1,36 @@
-const promise1 = new Promise(function(resolve, reject) {
-    setTimeout(function() {
-        resolve('foo');
-    }, 7000);
-});
+let hour = 0;
+let minutes = 0;
+
+for (let i = 0; i <= 599; i++) {
+    minutes++;
+    if (minutes % 60 === 0) {
+        hour++;
+        minutes = 0;
+    }
+}
+
+console.log("hour", hour);
+console.log("minutes", minutes);
 
 
-promise1.then(function(value) {
-    console.log(value);
-    // expected output: "foo"
-});
 
-console.log(promise1);
+
+
+
+
+// const promise1 = new Promise(function(resolve, reject) {
+//     setTimeout(function() {
+//         resolve('foo');
+//     }, 7000);
+// });
+//
+//
+// promise1.then(function(value) {
+//     console.log(value);
+//     // expected output: "foo"
+// });
+//
+// console.log(promise1);
 // expected output: [object Promise]
 
 
