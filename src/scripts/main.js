@@ -1,21 +1,16 @@
-let hour = 0;
-let minutes = 0;
-
-for (let i = 0; i <= 599; i++) {
-    minutes++;
-    if (minutes % 60 === 0) {
-        hour++;
-        minutes = 0;
-    }
-}
-
-console.log("hour", hour);
-console.log("minutes", minutes);
-
-
-
-
-
+// const container = document.querySelector('.container');
+// const btn = document.querySelector("body > button");
+//
+// btn.addEventListener('click', function () {
+//     const offSetY100 = (window.pageYOffset) + (window.innerHeight / 2) - (btn.offsetHeight / 2);
+//     console.log(offSetY100);
+//     container.style.transform = `translate(0, ${offSetY100}px)`;
+// });
+//
+// window.addEventListener('scroll', function () {
+//     const offSetY100 = (window.pageYOffset) + (window.innerHeight / 2) - (btn.offsetHeight / 2);
+//     container.style.transform = `translate(0, ${offSetY100}px)`;
+// });
 
 
 // const promise1 = new Promise(function(resolve, reject) {
@@ -31,11 +26,7 @@ console.log("minutes", minutes);
 // });
 //
 // console.log(promise1);
-// expected output: [object Promise]
-
-
-
-
+// // expected output: [object Promise]
 
 
 // const btn = document.querySelector("body > button");
@@ -62,8 +53,6 @@ console.log("minutes", minutes);
 // expected output: 12
 
 
-
-
 // function myFunction() {
 //     var str = "Is this all there is?";
 //     var patt1 = /[ha]/g;
@@ -83,9 +72,6 @@ console.log("minutes", minutes);
 // // expected output: "Fire-Air-Water"
 
 // myFunction();
-
-
-
 
 
 // const numberGenerator = (howManyNumber) => {
@@ -127,3 +113,11 @@ console.log("minutes", minutes);
 //
 // const arr4 = numberGenerator(5);
 // console.log(arr4);
+
+const array = ['lody', 'kiełbasa', 'zupa'];
+
+const value = 'zupa';
+
+const result = array.some(el => el === value);
+console.log(result);
+
