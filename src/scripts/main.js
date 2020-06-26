@@ -1,3 +1,24 @@
+let hour = 0;
+let minutes = 0;
+
+for (let i = 0; i <= 599; i++) {
+    minutes++;
+    if (minutes % 60 === 0) {
+        hour++;
+        minutes = 0;
+    }
+}
+
+console.log("hour", hour);
+console.log("minutes", minutes);
+
+
+
+
+
+
+
+
 // const container = document.querySelector('.container');
 // const btn = document.querySelector("body > button");
 //
