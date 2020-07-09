@@ -6,7 +6,6 @@ const btnConvert = document.getElementById("btnConvert");
 btnConvert.addEventListener('click', () => {
     const correctClassValue = correctClass.value;
     resultClassName.value = correctClassValue.charAt(0) === '.' ? `${correctClassValue.replace(/ /g, '.')} ` : `.${correctClassValue.replace(/ /g, '.')} `;
-    correctClass.value = '';
 });
 
 function copyText() {
@@ -14,6 +13,7 @@ function copyText() {
     copyText.select();
     copyText.setSelectionRange(0, 99999)
     document.execCommand("copy");
+    correctClass.value = '';
 }
 
 resultClassName.addEventListener('click', copyText);

@@ -1,23 +1,4 @@
-body {
-  height: 3000px;
-  margin: 0;
-
-  div {
-    width: 100%;
-    height: 40px;
-    background-color: orangered;
-    transform: translate(0, 30vh);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  button {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    z-index: 2;
-  }
+#correctClass, #btnConvert, #resultClassName {
+  font-size: 30px;
+  width: 100%;
 }
