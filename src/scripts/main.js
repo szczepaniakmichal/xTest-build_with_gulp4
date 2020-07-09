@@ -1,22 +1,22 @@
-let hour = 0;
-let minutes = 0;
+const correctClass = document.getElementById("correctClass");
+const resultClassName = document.getElementById("resultClassName");
+const btnConvert = document.getElementById("btnConvert");
 
-for (let i = 0; i <= 599; i++) {
-    minutes++;
-    if (minutes % 60 === 0) {
-        hour++;
-        minutes = 0;
-    }
+
+btnConvert.addEventListener('click', () => {
+    const correctClassValue = correctClass.value;
+    resultClassName.value = correctClassValue.charAt(0) === '.' ? `${correctClassValue.replace(/ /g, '.')} ` : `.${correctClassValue.replace(/ /g, '.')} `;
+    correctClass.value = '';
+});
+
+function copyText() {
+    var copyText = document.getElementById("resultClassName");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
 }
 
-console.log("hour", hour);
-console.log("minutes", minutes);
-
-
-
-
-
-
+resultClassName.addEventListener('click', copyText);
 
 
 // const container = document.querySelector('.container');
@@ -135,10 +135,11 @@ console.log("minutes", minutes);
 // const arr4 = numberGenerator(5);
 // console.log(arr4);
 
-const array = ['lody', 'kiełbasa', 'zupa'];
 
-const value = 'zupa';
-
-const result = array.some(el => el === value);
-console.log(result);
-
+// const array = ['lody', 'kiełbasa', 'zupa'];
+//
+// const value = 'zupa';
+//
+// const result = array.some(el => el === value);
+// console.log(result);
+//
