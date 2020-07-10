@@ -1,12 +1,10 @@
 const correctClass = document.getElementById("correctClass");
 const resultClassName = document.getElementById("resultClassName");
-const btnConvert = document.getElementById("btnConvert");
 
-
-btnConvert.addEventListener('click', () => {
-    const correctClassValue = correctClass.value;
+function change(e) {
+    const correctClassValue = e.target.value;
     resultClassName.value = correctClassValue.charAt(0) === '.' ? `${correctClassValue.replace(/ /g, '.')} ` : `.${correctClassValue.replace(/ /g, '.')} `;
-});
+};
 
 function copyText() {
     var copyText = document.getElementById("resultClassName");
@@ -14,9 +12,32 @@ function copyText() {
     copyText.setSelectionRange(0, 99999)
     document.execCommand("copy");
     correctClass.value = '';
-}
+};
+
+correctClass.addEventListener('input', change);
 
 resultClassName.addEventListener('click', copyText);
+
+
+// const correctClass = document.getElementById("correctClass");
+// const resultClassName = document.getElementById("resultClassName");
+// const btnConvert = document.getElementById("btnConvert");
+//
+//
+// btnConvert.addEventListener('click', () => {
+//     const correctClassValue = correctClass.value;
+//     resultClassName.value = correctClassValue.charAt(0) === '.' ? `${correctClassValue.replace(/ /g, '.')} ` : `.${correctClassValue.replace(/ /g, '.')} `;
+// });
+//
+// function copyText() {
+//     var copyText = document.getElementById("resultClassName");
+//     copyText.select();
+//     copyText.setSelectionRange(0, 99999)
+//     document.execCommand("copy");
+//     correctClass.value = '';
+// }
+//
+// resultClassName.addEventListener('click', copyText);
 
 
 // const container = document.querySelector('.container');
