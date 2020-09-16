@@ -1,5 +1,38 @@
 const correctClass = document.getElementById("correctClass");
 const resultClassName = document.getElementById("resultClassName");
+const btnGetelement = document.querySelector(".btn-get-element");
+const text = document.querySelector(".text");
+
+
+var onElementReady = function(selector) {
+    return new Promise((resolve) => {
+        var waitForElement = function() {
+            const $element = document.querySelector(selector);
+            console.log("ech")
+            if ($element) {
+                resolve($element);
+                console.log($element)
+            } else {
+                window.requestAnimationFrame(() => waitForElement());
+            }
+        };
+        waitForElement();
+    })
+};
+
+btnGetelement.addEventListener('click', () => {
+    const span = document.createElement('span');
+    span.classList.add('halo')
+    span.textContent = " halloooo!"
+    text.appendChild(span);
+})
+
+
+// var $someElement = document.querySelector('.halo');
+onElementReady('.halo')
+    .then(() => {
+        console.log("jestem!")
+    });
 
 function change(e) {
     const correctClassValue = e.target.value;
