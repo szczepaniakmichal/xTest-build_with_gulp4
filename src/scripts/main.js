@@ -8,10 +8,8 @@ var onElementReady = function(selector) {
     return new Promise((resolve) => {
         var waitForElement = function() {
             const $element = document.querySelector(selector);
-            console.log("ech")
             if ($element) {
                 resolve($element);
-                console.log($element)
             } else {
                 window.requestAnimationFrame(() => waitForElement());
             }
@@ -27,11 +25,10 @@ btnGetelement.addEventListener('click', () => {
     text.appendChild(span);
 })
 
-
-// var $someElement = document.querySelector('.halo');
 onElementReady('.halo')
-    .then(() => {
-        console.log("jestem!")
+    .then((el) => {
+        console.log("jestem!", el);
+        el.style.backgroundColor = "silver";
     });
 
 function change(e) {
