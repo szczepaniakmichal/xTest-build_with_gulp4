@@ -4,7 +4,7 @@ const btnGetelement = document.querySelector(".btn-get-element");
 const text = document.querySelector(".text");
 
 
-var onElementReady = function(selector) {
+const onElementReady = (selector) => {
     return new Promise((resolve) => {
         var waitForElement = function() {
             const $element = document.querySelector(selector);
@@ -27,7 +27,6 @@ btnGetelement.addEventListener('click', () => {
 
 onElementReady('.halo')
     .then((el) => {
-        console.log("jestem!", el);
         el.style.backgroundColor = "silver";
     });
 
@@ -37,7 +36,7 @@ function change(e) {
 };
 
 function copyText() {
-    var copyText = document.getElementById("resultClassName");
+    const copyText = document.getElementById("resultClassName");
     copyText.select();
     copyText.setSelectionRange(0, 99999)
     document.execCommand("copy");
