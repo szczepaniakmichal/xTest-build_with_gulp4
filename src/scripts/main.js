@@ -1,5 +1,6 @@
 const correctClass = document.getElementById("correctClass");
 const resultClassName = document.getElementById("resultClassName");
+const resultToLowerCase = document.getElementById("resultToLowerCase");
 const btnGetelement = document.querySelector(".btn-get-element");
 const text = document.querySelector(".text");
 
