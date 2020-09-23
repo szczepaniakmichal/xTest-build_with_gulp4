@@ -34,10 +34,11 @@ onElementReady('.halo')
 function change(e) {
     const correctClassValue = e.target.value;
     resultClassName.value = correctClassValue.charAt(0) === '.' ? `${correctClassValue.replace(/ /g, '.')} ` : `.${correctClassValue.replace(/ /g, '.')} `;
+    resultToLowerCase.value = correctClassValue.toLowerCase();
 };
 
-function copyText() {
-    const copyText = document.getElementById("resultClassName");
+function copyText(selector) {
+    const copyText = document.getElementById(selector);
     copyText.select();
     copyText.setSelectionRange(0, 99999)
     document.execCommand("copy");
@@ -46,7 +47,8 @@ function copyText() {
 
 correctClass.addEventListener('input', change);
 
-resultClassName.addEventListener('click', copyText);
+resultClassName.addEventListener('click', () => copyText("resultClassName"));
+resultToLowerCase.addEventListener('click', () => copyText("resultToLowerCase"));
 
 
 // const correctClass = document.getElementById("correctClass");
