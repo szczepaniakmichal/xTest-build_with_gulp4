@@ -59,6 +59,19 @@ resultClassName.addEventListener('click', () => copyText("resultClassName"));
 resultToLowerCase.addEventListener('click', () => copyText("resultToLowerCase"));
 
 
+
+
+
+// wylistowanie tytulow ostatnio ogladanych projektow
+
+let lastProject = document.querySelectorAll("ul.last-viewed-projects__items.js-last-viewed-projects-items > li")
+lastProject.forEach(el => {
+    console.log(el.querySelector("a").getAttribute('title'));
+})
+
+
+
+
 // const correctClass = document.getElementById("correctClass");
 // const resultClassName = document.getElementById("resultClassName");
 // const btnConvert = document.getElementById("btnConvert");
