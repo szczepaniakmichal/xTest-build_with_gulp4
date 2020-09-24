@@ -1,13 +1,14 @@
+const btnGetelement = document.querySelector(".btn-get-element");
 const correctClass = document.getElementById("correctClass");
+const copyModal = document.querySelector(".modal");
 const resultClassName = document.getElementById("resultClassName");
 const resultToLowerCase = document.getElementById("resultToLowerCase");
-const btnGetelement = document.querySelector(".btn-get-element");
 const text = document.querySelector(".text");
 
 
 const onElementReady = (selector) => {
     return new Promise((resolve) => {
-        var waitForElement = function() {
+        var waitForElement = function () {
             const $element = document.querySelector(selector);
             if ($element) {
                 resolve($element);
@@ -39,10 +40,17 @@ function change(e) {
 
 function copyText(selector) {
     const copyText = document.getElementById(selector);
+    if (copyText.value.length === 0) return;
     copyText.select();
     copyText.setSelectionRange(0, 99999)
     document.execCommand("copy");
     correctClass.value = '';
+    copyModal.classList.remove('modal__hide')
+    copyModal.classList.add('modal__copy');
+    setTimeout(() => {
+        copyModal.classList.remove('modal__copy');
+        copyModal.classList.add('modal__hide');
+    }, 2000);
 };
 
 correctClass.addEventListener('input', change);
