@@ -82,11 +82,11 @@ function copyText(selector) {
     copyText.setSelectionRange(0, 99999)
     document.execCommand("copy");
     correctClass.value = '';
-    copyModal.classList.remove('modal__hide')
-    copyModal.classList.add('modal__copy');
+    copyModal.classList.toggle('modal__hide')
+    copyModal.classList.toggle('modal__copy');
     setTimeout(() => {
-        copyModal.classList.remove('modal__copy');
-        copyModal.classList.add('modal__hide');
+        copyModal.classList.toggle('modal__copy');
+        copyModal.classList.toggle('modal__hide');
     }, 2000);
 };
 
