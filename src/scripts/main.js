@@ -1,10 +1,34 @@
-const btnGetelement = document.querySelector(".btn-get-element");
-const correctClass = document.getElementById("correctClass");
-const copyModal = document.querySelector(".modal");
-const resultClassName = document.getElementById("resultClassName");
-const resultToLowerCase = document.getElementById("resultToLowerCase");
-const text = document.querySelector(".text");
+const checkString1 = document.querySelector('.check-string-1');
+const checkString2 = document.querySelector('.check-string-2');
+const btnCheckString = document.querySelector('.btn-check-string');
 
+const isStrEqual = (firstStr, secondStr, el) => {
+    el.textContent = 'Are strings is equal?'
+    // const str1 = String(firstStr.value).valueOf();
+    // const str2 = String(secondStr.value).valueOf();
+    const str1 = firstStr.value;
+    const str2 = secondStr.value;
+    if (str1 === '' || str2 === '') return ;
+    let btnText =  btnCheckString.textContent;
+    if (str1 === str2) {
+        el.textContent = `${btnText} yes`
+    } else if (str1 !== str2) {
+        el.textContent = `${btnText} no`
+    } else {
+        el.textContent = `${btnText} error`
+    }
+}
+btnCheckString.addEventListener('click', () => isStrEqual(checkString1, checkString2, btnCheckString))
+
+
+
+
+
+
+// Promise - oczekuje na element
+
+const btnGetelement = document.querySelector(".btn-get-element");
+const text = document.querySelector(".text");
 
 const onElementReady = (selector) => {
     return new Promise((resolve) => {
@@ -31,6 +55,19 @@ onElementReady('.halo')
     .then((el) => {
         el.style.backgroundColor = "silver";
     });
+
+
+
+
+
+
+
+// ponoc przy nazwach class - dodaje kropki
+
+const correctClass = document.getElementById("correctClass");
+const copyModal = document.querySelector(".modal");
+const resultClassName = document.getElementById("resultClassName");
+const resultToLowerCase = document.getElementById("resultToLowerCase");
 
 function change(e) {
     const correctClassValue = e.target.value;
@@ -59,6 +96,11 @@ resultClassName.addEventListener('click', () => copyText("resultClassName"));
 resultToLowerCase.addEventListener('click', () => copyText("resultToLowerCase"));
 
 
+
+
+
+
+
 // wylistowanie tytulow ostatnio ogladanych projektow
 
 let lastProject = document.querySelectorAll("ul.last-viewed-projects__items.js-last-viewed-projects-items > li")
@@ -67,6 +109,12 @@ lastProject.forEach(el => {
 })
 
 
+
+
+
+
+// dodanie styli
+
 function addStyle() {
     const sheet = new CSSStyleSheet();
     sheet.insertRule(`
@@ -74,10 +122,13 @@ function addStyle() {
             color: green;
         }
     `);
-    document.adoptedStyleSheets = [ sheet ]
+    document.adoptedStyleSheets = [sheet]
 }
-
 addStyle();
+
+
+
+
 
 
 // const correctClass = document.getElementById("correctClass");

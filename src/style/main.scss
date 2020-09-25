@@ -1,4 +1,6 @@
 $color-green: green;
+$color-light-green: greenyellow;
+$color-text: #fff;
 
 body {
   margin: 0;
@@ -27,17 +29,31 @@ body {
     }
   }
 
-  .btn-get-element {
+  .btn {
     display: block;
-    padding: 20px;
-    margin: 30px auto;
+    padding: 10px 20px;
+    background-color: $color-green;
+    border: 1px solid $color-green;
+    color: $color-text;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+
+    &.btn-get-element {
+      margin: 30px auto;
+    }
+
+    &.btn-check-string {
+
+    }
   }
+
 
   .halo {
     color: darkorange;
   }
 
-  #correctClass, #resultClassName, #resultToLowerCase {
+  .inputStyle {
     display: block;
     margin: 10px auto;
     width: 96%;
