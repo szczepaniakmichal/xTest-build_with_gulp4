@@ -1,3 +1,15 @@
+const houseOfCards = (numberOfFloors) => {
+    if (typeof numberOfFloors !== 'number' || numberOfFloors === 0) return;
+    return (3 * (Math.pow(numberOfFloors, 2) ) + numberOfFloors ) / 2;
+};
+console.log("houseOfCards:", houseOfCards(4))
+
+
+
+
+
+
+
 const checkString1 = document.querySelector('.check-string-1');
 const checkString2 = document.querySelector('.check-string-2');
 const btnCheckString = document.querySelector('.btn-check-string');
@@ -73,7 +85,7 @@ function change(e) {
     const correctClassValue = e.target.value;
     resultClassName.value = correctClassValue.charAt(0) === '.' ? `${correctClassValue.replace(/ /g, '.')} ` : `.${correctClassValue.replace(/ /g, '.')} `;
     resultToLowerCase.value = correctClassValue.toLowerCase();
-};
+}
 
 function copyText(selector) {
     const copyText = document.getElementById(selector);
@@ -88,7 +100,7 @@ function copyText(selector) {
         copyModal.classList.toggle('modal__copy');
         copyModal.classList.toggle('modal__hide');
     }, 2000);
-};
+}
 
 correctClass.addEventListener('input', change);
 
